@@ -1,0 +1,19 @@
+.footer{
+    position: fixed;
+    left: 0;
+    width: 100%;
+    bottom: 0;
+    background-color: rgb(228, 156, 23);
+    height: 70px;
+   
+    
+}
+
+.icons svg{
+    position: relative;
+    margin-left: 20%;
+    padding: 10;
+    margin-top: 20px;
+    align-items: center;
+    color: rgb(9, 9, 10);
+}

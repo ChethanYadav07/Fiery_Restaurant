@@ -1,0 +1,21 @@
+.container-fluid{
+    background-color: rgb(228, 156, 23);
+    height: 80px;
+
+}
+#logo{
+    width: 5%;
+    height: 60%;
+}
+
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .btn-primary{
+    background-color: black;
+    color: white;
+  }
+  

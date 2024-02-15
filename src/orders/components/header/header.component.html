@@ -1,0 +1,35 @@
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary">
+    <div class="container-fluid">
+      <button data-mdb-collapse-init class="navbar-toggler" type="button" data-mdb-target="#navbarTogglerDemo03"
+        aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+      <img src="https://png.pngtree.com/png-clipart/20200727/original/pngtree-restaurant-logo-design-vector-template-png-image_5441058.jpg" alt="" id="logo">
+      <a class="navbar-brand" href="#">Fiery</a>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/vieworders">Orders</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Payments</a>
+          </li>
+        </ul>
+        <form class="d-flex input-group w-auto">
+          <input type="search" class="form-control" placeholder="Search Food" aria-label="Search" />
+          <button data-mdb-ripple-init class="btn btn-primary" type="button" data-mdb-ripple-color="dark">
+            Search
+          </button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <router-outlet></router-outlet>
+
+ 
+
+  

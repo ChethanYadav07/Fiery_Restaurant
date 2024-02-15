@@ -1,0 +1,25 @@
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+.abc{
+    margin-left: 15%;
+    text-decoration: solid;
+    margin-top: 10%;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+h1{
+    text-transform: uppercase;
+   text-shadow: 3px 3px slategrey;
+}
+
+#btn{
+    background-color: orange;
+    color: aliceblue;
+    width: 150px;
+    height: 50px;
+    border-radius: 5px;
+    border: 1px solid white;
+}
