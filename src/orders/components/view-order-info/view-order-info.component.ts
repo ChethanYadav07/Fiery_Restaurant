@@ -2,6 +2,9 @@ import { NgFor } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { ActivatedRoute, Route, Router, RouterLink, RouterOutlet } from '@angular/router';
+import { Order } from '../../models/order';
+import { Observable } from 'rxjs';
+import { OrderService } from '../../services/order.service';
 
 @Component({
   selector: 'app-view-order-info',
@@ -11,18 +14,30 @@ import { ActivatedRoute, Route, Router, RouterLink, RouterOutlet } from '@angula
   styleUrl: './view-order-info.component.css'
 })
 export class ViewOrderInfoComponent {
-  id:any
-  order:any
-  constructor(private rt:ActivatedRoute,private http:HttpClient){
-      // this.id=this.rt.snapshot.params['id'];
+  order:Order={
+    id: "",
+    contact_Name: '',
+    order_Date: undefined,
+    items_Ordered: 0,
+    order_Total: 0,
+    tax_Total: 0,
+    grand_Total: 0,
+    address: '',
+    phone: '',
+    items: []
+  }
+  constructor(private rt:ActivatedRoute,private http:OrderService){
+ 
+    
   }
    ngOnInit(){
     let value:any
-    value=this.rt.snapshot.params['id'];
-    this.http.get(`http://localhost:3000/order/${value}`).subscribe(data => {
-      console.log(data);
-      this.order=data;
+    value=localStorage.getItem("myid")
+    console.log(value)
+    this.http.getById(value).subscribe(data =>{
+      this.order=data as Order;
     })
+  
    }
     
 }

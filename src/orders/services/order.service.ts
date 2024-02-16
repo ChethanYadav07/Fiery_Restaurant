@@ -8,15 +8,24 @@ import { Order } from '../models/order';
 })
 export class OrderService {
 
+
   constructor(private http: HttpClient) {
 
   }
   getOrders() {
-    this.http.get('http://localhost:3000/order').subscribe(data => console.log(data)
-    )
+   return this.http.get('http://localhost:3000/order')
+    
+  }
+
+  getById(id:number){
+    return this.http.get('http://localhost:3000/order/'+id)
   }
 
   postOrder(order: Order) {
-    this.http.post('http://localhost:3000/order', order).subscribe();
+    order.order_Date = "01-01-2000"
+    order.grand_Total = 1000
+    order.tax_Total = 100
+    order.order_Total = 900
+   return this.http.post('http://localhost:3000/order', order);
   }
 }

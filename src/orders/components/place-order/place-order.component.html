@@ -1,10 +1,10 @@
 <h2 align="center">Place Your Order</h2>
 <div class="container">
-  <form>
+  <form #orderform="ngForm" (ngSubmit)="handleSubmit(orderform)">
     <div data-mdb-input-init class="form-outline mb-4">
       <label class="form-label" for="form1Example1">Select Food:</label><br>
-      <select name="" id="">
-        <option value="food1">Select food</option>
+      <select name="" id="select" name="selectTag" >
+        <option value="ss">Select food</option>
         <option value="food1">food1</option>
         <option value="food2">food2</option>
         <option value="food4">food4</option>
@@ -13,18 +13,17 @@
     </div>
     <div data-mdb-input-init class="form-outline mb-4">
       <label class="form-label" for="form1Example1">Name</label>
-      <input type="text" id="form1Example1" class="form-control" />
+      <input type="text" id="form1Example1" class="form-control" name="contact_Name" ngModel />
 
     </div>
     <div data-mdb-input-init class="form-outline mb-4">
       <label class="form-label" for="form1Example2">Phone</label>
-      <input type="text" id="form1Example2" class="form-control" />
+      <input type="text" id="form1Example2" class="form-control" name="phone" ngModel/>
 
     </div>
     <div data-mdb-input-init class="form-outline mb-4">
       <label class="form-label" for="form1Example2">Address</label>
-      <input type="text" id="form1Example2" class="form-control" />
-
+      <input type="text" id="form1Example2" class="form-control" name="address" ngModel />
     </div>
 
     <button data-mdb-ripple-init type="submit" class="btn btn-primary btn-block">Order </button>

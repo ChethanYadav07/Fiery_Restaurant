@@ -1,11 +1,10 @@
-
 <div class="container">
-  <div *ngFor="let order of data1">
+  <div *ngFor="let order of orders">
     <div class="card" style="width: 18rem;">
       <h5>order id: {{order.id}}</h5>
       <h6>Cust Name: {{order.contact_Name}}</h6>
       <h6>order_Total: {{order.order_Total}}</h6>
-      <a  class="btn btn-primary1" (click)="navigate(order.id)">Details</a>
+      <a class="btn btn-primary1" (click)="navigate(order.id)">Details</a>
     </div>
   </div>
 </div>

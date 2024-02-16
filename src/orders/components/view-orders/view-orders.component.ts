@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { NgFor } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
+import { OrderService } from '../../services/order.service';
+import { Order } from '../../models/order';
 
 @Component({
   selector: 'app-view-orders',
@@ -11,20 +13,19 @@ import { HttpClient } from '@angular/common/http';
   styleUrl: './view-orders.component.css'
 })
 export class ViewOrdersComponent {
-  data1: any
-  constructor(private service: HttpClient, private rt: Router) {
+  orders: Order[] = []
+  constructor(private rt: Router, private orderService: OrderService) {
+
   }
   ngOnInit() {
-    let result: any
-    this.service.get('http://localhost:3000/order').subscribe(data => {
-      result = data;
-      this.data1 = data;
+    this.orderService.getOrders().subscribe(data => {
+      this.orders = data as Order[];
     })
 
   }
 
-  navigate(id:any) {
-    console.log(id);
-    this.rt.navigate(['/orderinfo'], id)
+  navigate(id: any) {
+    localStorage.setItem("myid", id)
+    this.rt.navigate(['/orderinfo'])
   }
 }
